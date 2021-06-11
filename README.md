@@ -30,15 +30,16 @@ Then, rename this original csv file to be "DEEP_{model}\_surveydata\_{project_na
 Then execute the following:
 
 ```r
-# For DEEP Time
 library(DEEPEst)
+library(rstan)
+
+# For DEEP Time
 Time_data_prepare(project_name = "StudyNo1", path = path, num_question = 12)
-Stan_Time_Estimation(project_name = "StudyNo1", num_question_Est = 12, num_question = 12, type_theta = "Hier", path = path)
+Stan_Time_Estimation(project_name = "StudyNo1", num_question_Est = 12, num_question = 12, type_theta = "Hier", path = path, iter = n)
 
 # For DEEP Risk
-library(DEEPEst)
 Risk_data_prepare(project_name = "StudyNo1", path = path, num_question = 12)
-Stan_Risk_Estimation(project_name = "StudyNo1", num_question_Est = 12, num_question = 12, type_theta = "Hier", path = path)
+Stan_Risk_Estimation(project_name = "StudyNo1", num_question_Est = 12, num_question = 12, type_theta = "Hier", path = path, iter = n)
 ```
 
 For details about how to set these arguments and other functions involved, please click the arrows here for relevant functions:
